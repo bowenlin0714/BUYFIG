@@ -6,9 +6,6 @@ import fs from 'fs'
 import dotenv from 'dotenv'
 
 import banners from '../models/banners.js'
-import { log } from 'console'
-import cheerio from 'cheerio'
-import { text } from 'body-parser'
 
 let storage
 

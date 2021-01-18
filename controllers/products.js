@@ -6,8 +6,6 @@ import fs from 'fs'
 import dotenv from 'dotenv'
 
 import products from '../models/products.js'
-import { log } from 'console'
-// import { log } from 'console'
 
 let storage
 
