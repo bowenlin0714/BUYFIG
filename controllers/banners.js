@@ -34,7 +34,7 @@ if (process.env.DEV === 'true') {
     // 上傳的路徑含檔名
     // 路徑為 FTP 的絕對路徑
     destination (req, file, options, callback) {
-      callback(null, '/' + Date.now() + path.extname(file.originalname))
+      callback(null, 'images/banners' + Date.now() + path.extname(file.originalname))
     }
   })
 }
@@ -148,9 +148,10 @@ export const bannerpic = async (req, res) => {
       method: 'GET',
       url: 'http://' + process.env.FTP_HOST + '/' + process.env.FTP_USER + '/' + req.params.file,
       responseType: 'stream'
-    }).then(res => {
-      res.data.pipe(res)
+    }).then(data => {
+      data.data.pipe(res)
     }).catch(error => {
+      console.log(error)
       res.status(error.response.status).send({ success: false, message: '取得圖片失敗' })
     })
   }
