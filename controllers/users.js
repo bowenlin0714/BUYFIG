@@ -89,6 +89,7 @@ export const logout = async (req, res) => {
   })
 }
 
+// 確認登入
 export const heartbeat = async (req, res) => {
   let isLogin = false
   if (req.session.user !== undefined) {

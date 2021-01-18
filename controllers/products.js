@@ -17,7 +17,8 @@ let number = 10
 if (process.env.DEV === 'true') {
   storage = multer.diskStorage({
     destination (req, file, callback) {
-      callback(null, 'images/products/')
+      // callback(null, 'images/products/')
+      callback(null, '/')
     },
     filename (req, file, callback) {
       callback(null, file.originalname + Date.now() + path.extname(file.originalname))
