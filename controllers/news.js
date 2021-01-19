@@ -74,5 +74,3 @@ export const getnews = async (req, res) => {
     console.log(err)
   }
 }
-
-create()

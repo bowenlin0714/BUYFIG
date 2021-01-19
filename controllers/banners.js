@@ -33,8 +33,14 @@ if (process.env.DEV === 'true') {
     },
     // 上傳的路徑含檔名
     // 路徑為 FTP 的絕對路徑
-    destination (req, file, options, callback) {
-      callback(null, '/' + Date.now() + path.extname(file.originalname))
+    // destination (req, file, options, callback) {
+    //   callback(null, '/' + Date.now() + path.extname(file.originalname))
+    // }
+    destination (req, file, callback) {
+      callback(null, 'images/banners')
+    },
+    filename (req, file, callback) {
+      callback(null, Date.now() + path.extname(file.originalname))
     }
   })
 }
