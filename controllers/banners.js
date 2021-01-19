@@ -118,15 +118,6 @@ export const create = async (req, res) => {
 
 // 讀取輪播圖資訊
 export const bannertxt = async (req, res) => {
-  if (req.session.user === undefined) {
-    res.status(401).send({ success: false, message: '未登入' })
-    return
-  }
-  if (req.session.user.isAdmin !== true) {
-    res.status(403).send({ success: false, message: '沒有權限' })
-    return
-  }
-
   try {
     const result = await banners.find()
 
