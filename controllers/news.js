@@ -34,35 +34,33 @@ export const create = async (req, res) => {
 }
 
 export const edit = async (req, res) => {
-  // try {
-  //   // 插入新聞
-  //   const array = []
-  //   axios.get('https://www.toy-people.com/').then(res => {
-  //     const $ = cheerio.load(res.data)
-  //     const textdata = $('.text h2 .bold_face ')
-  //     const imgdata = $('.list > .image > a')
-  //     const timedata = $('.times ')
-  //     const inertext = $('.text > p ')
+  try {
+    // 插入新聞
+    const array = []
+    axios.get('https://www.toy-people.com/').then(res => {
+      const $ = cheerio.load(res.data)
+      const textdata = $('.text h2 .bold_face ')
+      const imgdata = $('.list > .image > a')
+      const timedata = $('.times ')
+      const inertext = $('.text > p ')
 
-  //     for (let i = 0; i < textdata.length; i++) {
-  //       const data = {
-  //         href: textdata.eq(i).attr('href'),
-  //         text: textdata.eq(i).text(),
-  //         img: imgdata.eq(i).css('background-image'),
-  //         times: timedata.eq(i).text(),
-  //         innertext: inertext.eq(i).text()
-  //       }
-  //       array.push(data)
-  //     }
-  //     const result = news[0].update({
-  //       data: array
-  //     })
-  //     res.status(200).send({ success: true, message: '', result })
-  //     console.log(result)
-  //   })
-  // } catch (err) {
-  //   console.log(err)
-  // }
+      for (let i = 0; i < textdata.length; i++) {
+        const data = {
+          href: textdata.eq(i).attr('href'),
+          text: textdata.eq(i).text(),
+          img: imgdata.eq(i).css('background-image'),
+          times: timedata.eq(i).text(),
+          innertext: inertext.eq(i).text()
+        }
+        array.push(data)
+      }
+      console.log(news)
+      news.findByIdAndUpdate('5fffd772c6f7f32e8cc4fab4', array, { new: true })
+      res.status(200).send({ success: true, message: '' })
+    })
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 export const getnews = async (req, res) => {
