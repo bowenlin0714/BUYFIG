@@ -13,6 +13,9 @@ const orderProductSchema = new Schema({
     type: Number,
     required: [true, '缺少購買數量'],
     minlength: [1, '購買數量最小為1']
+  },
+  select: {
+    type: Boolean
   }
 })
 
