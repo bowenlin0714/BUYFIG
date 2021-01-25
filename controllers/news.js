@@ -54,7 +54,6 @@ export const edit = async (req, res) => {
         }
         array.push(data)
       }
-      console.log(news)
       news.findByIdAndUpdate('5fffd772c6f7f32e8cc4fab4', array, { new: true })
       res.status(200).send({ success: true, message: '' })
     })
