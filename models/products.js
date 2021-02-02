@@ -50,12 +50,12 @@ const productSchema = new Schema({
     minlength: [0, '數量最小為0'],
     maxlength: [999999, '請輸入正確數量']
   },
-  productNumber: {
-    type: String,
-    required: [true, '缺少商品編號'],
-    minlength: [1, '編號最小為1'],
-    unique: true
-  },
+  // productNumber: {
+  //   type: String,
+  //   required: [true, '缺少商品編號'],
+  //   minlength: [1, '編號最小為1'],
+  //   unique: true
+  // },
   description: {
     type: String,
     required: [true, '缺少商品敘述']
