@@ -104,6 +104,7 @@ export const createProductinfo = async (req, res) => {
           images,
           comments: []
         })
+        console.log(result)
         res.status(200).send({ success: true, message: '', result })
       } catch (error) {
         console.log(error)

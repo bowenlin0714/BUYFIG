@@ -1,6 +1,6 @@
 import md5 from 'md5'
 import users from '../models/users.js'
-import util from 'util'
+// import util from 'util'
 
 // 註冊
 export const create = async (req, res) => {
@@ -127,7 +127,7 @@ export const accounts = async (req, res) => {
 
   try {
     const result = await users.find().populate('orders.products.p_id')
-    console.log(util.inspect(result, { showHidden: true, depth: null }))
+    // console.log(util.inspect(result, { showHidden: true, depth: null }))
 
     res.status(200).send({ success: true, message: '', result })
   } catch (error) {
