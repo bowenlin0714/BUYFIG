@@ -18,7 +18,6 @@ export const create = async (req, res) => {
         isRes: req.body.isRes,
         date: req.body.date
       })
-      console.log(res)
       res.status(200).send({ success: true, message: '' })
     }
   } catch (error) {

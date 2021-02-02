@@ -173,7 +173,6 @@ export const del = async (req, res) => {
 
       // 刪除本機圖片檔
       if (process.env.DEV === 'true') {
-        console.log(result.file)
         fs.unlink('images/banners/' + result.file, () => {})
       }
     }
