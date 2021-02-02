@@ -10,7 +10,7 @@ import products from '../models/products.js'
 let storage
 
 dotenv.config()
-let number = 10
+let number = 100
 
 // 本機開發，檔案存電腦
 // 雲端環境，檔案存 FTP
